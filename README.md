@@ -4,8 +4,10 @@ Sparse--Sparse matrix multiplications are widely used across multiple domains, b
 
 We propose SPAGHETTI, an open-source Chisel generator for creating FPGA-optimized sparse GEMM accelerators. The key novelty in Spaghetti is a new pattern-aware software scheduler that analyzes the sparsity pattern and schedules row-col pairs of the inputs onto the fixed microarchitecture. Spaghetti takes advantage of our observation that in outer-product the rows in the input matrix lead to mutually independent rows in the final output. Thus the scheduler can partition the input into tiles that maximize reuse and eliminate re-fetching of the partial matrices from the DRAM. The microarchitecture template we create has the following key benefits i) we can statically schedule the inputs in a streaming fashion and maximize DRAM utilization, ii) we can parallelize the merge phase and generate multiple rows of the output in parallel maximally using the output DRAM bandwidth, iii) we can adapt to the varying logic resources and bandwidth across various FPGA boards and attain maximal roofline performance (only limited by memory-bandwidth). We auto-generate GEMM accelerators on Amazon AWS FPGAs and demonstrate that we can achieve performance improvement over CPUs and GPUs between 1.1--34.5x. For highly sparse inputs compared to state-of-the-art outer-product accelerators, we improved performance on average 2.6x, and reduce DRAM accesses on average 4x compared to the state-of-the-art outer product accelerator.  
 
+## Experimental Results
+
+![Accelerator](https://www.dropbox.com/s/vg22bob4h3w3gbd/SpaghettiToSpArch_DRAM.png?raw=1)
 
 
-![Accelerator](https://www.dropbox.com/s/vg22bob4h3w3gbd/SpaghettiToSpArch_DRAM.png?dl=0)
 
 
