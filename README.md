@@ -24,6 +24,8 @@ The \SPAGHETTI{} generator has been implemented as a Chisel library. It enables 
 
 ### Loop Tiling vs Pattern-Aware Tiling
 
+![Pattern-aware](https://www.dropbox.com/s/2kopvosepnn1kry/PatternAwareTiling.png?raw=1)
+
 ## Experimental Results
 
 ### Density of Input and Output Matrix
